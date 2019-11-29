@@ -40,33 +40,43 @@ public class Calculator extends JFrame{
 		setLayout(new BorderLayout()); // 定义窗体布局为边界布局
 		// 循环定义按钮，并添加到面板中
 		for (int i = 0; i < str.length; i++) {
-			Button button = new Button(str[i], type[i]);
-			button.addActionListener(new ActionListener() {
-
-		        @Override
-		        public void actionPerformed(ActionEvent arg0) {
-		            output = button.actionPerformed(arg0, text, output);
-		        }
-		    });
-			table.add(button);
-			/*switch(type[i])
+			Button button;
+			switch(type[i])
 			{
 			case 0:
 				button = new NumberButton(str[i]);
-				button.addActionListener(button);
+				button.addActionListener(new ActionListener() {
+
+			        @Override
+			        public void actionPerformed(ActionEvent arg0) {
+			        	output = button.actionPerformed(arg0, text, output);}
+				}
+			        );
 				table.add(button);
 				break;
 			case 1:
 				button = new OperatorButton(str[i]);
-				button.addActionListener(button);
+				button.addActionListener(new ActionListener() {
+
+			        @Override
+			        public void actionPerformed(ActionEvent arg0) {
+			        	output = button.actionPerformed(arg0, text, output);}
+				}
+			        );
 				table.add(button);
 				break;
 			case 2:
 				button = new FunctionButton(str[i]);
-				button.addActionListener(button);
+				button.addActionListener(new ActionListener() {
+
+			        @Override
+			        public void actionPerformed(ActionEvent arg0) {
+			        	output = button.actionPerformed(arg0, text, output);}
+				}
+			        );
 				table.add(button);
 				break;
-			}*/
+			}
 		}
 		
 		//将组件添加到容器中
