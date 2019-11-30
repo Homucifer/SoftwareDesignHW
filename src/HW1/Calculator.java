@@ -45,38 +45,25 @@ public class Calculator extends JFrame{
 			{
 			case 0:
 				button = new NumberButton(str[i]);
-				button.addActionListener(new ActionListener() {
-
-			        @Override
-			        public void actionPerformed(ActionEvent arg0) {
-			        	output = button.actionPerformed(arg0, text, output);}
-				}
-			        );
-				table.add(button);
 				break;
 			case 1:
 				button = new OperatorButton(str[i]);
-				button.addActionListener(new ActionListener() {
-
-			        @Override
-			        public void actionPerformed(ActionEvent arg0) {
-			        	output = button.actionPerformed(arg0, text, output);}
-				}
-			        );
-				table.add(button);
 				break;
 			case 2:
 				button = new FunctionButton(str[i]);
-				button.addActionListener(new ActionListener() {
-
-			        @Override
-			        public void actionPerformed(ActionEvent arg0) {
-			        	output = button.actionPerformed(arg0, text, output);}
-				}
-			        );
-				table.add(button);
+				break;
+			default:
+				button = new NumberButton(str[i]);
 				break;
 			}
+			button.addActionListener(new ActionListener() {
+
+		        @Override
+		        public void actionPerformed(ActionEvent arg0) {
+		        	output = button.actionPerformed(arg0, text, output);}
+			}
+		        );
+			table.add(button);
 		}
 		
 		//将组件添加到容器中
